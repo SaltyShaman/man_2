@@ -16,15 +16,15 @@ The goal is to provide a modern, secure, and maintainable structure for learning
 
 # 🗂 Project Structure
 
-man_2/
-├── backend/
-│   ├── app.js
-│   ├── routers/
-│   │   ├── authRouter.js
-│   │   └── middlewareRouter.js
-│   ├── package.json
-│   └── .env
-└── .gitignore
+man_2/ (root folder)
+    backend
+         app.js
+         routers (folder)
+            authRouter.js
+            middlewareRouter.js
+     package.json
+     .env
+.gitignore
 
 
 > Frontend folder structure will be added once implemented.  
