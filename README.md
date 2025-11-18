@@ -18,10 +18,12 @@ The goal is to provide a modern, secure, and maintainable structure for learning
 
 man_2/ (root folder)
 ├─ backend/
-│  ├─ app.js
-│  └─ routers/
-│     ├─ authRouter.js
-│     └─ middlewareRouter.js
+│ ├─ app.js
+│ └─ routers/
+│ ├─ authRouter.js
+│ └─ middlewareRouter.js
+├─ frontend/ # To be implemented
+│ └─ (folder structure will be added later)
 ├─ package.json
 ├─ .env
 └─ .gitignore
