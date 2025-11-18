@@ -16,6 +16,8 @@ The goal is to provide a modern, secure, and maintainable structure for learning
 
 # 🗂 Project Structure
 
+```
+
 man_2/ (root folder)
 ├─ backend/
 │ ├─ app.js
@@ -27,6 +29,10 @@ man_2/ (root folder)
 ├─ package.json
 ├─ .env
 └─ .gitignore
+
+
+```
+
 
 # 🛠️ Technology Stack
 
