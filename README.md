@@ -18,12 +18,12 @@ The goal is to provide a modern, secure, and maintainable structure for learning
 
 man_2/
 ├── backend/
-│ ├── app.js
-│ ├── routers/
-│ │ ├── authRouter.js
-│ │ └── middlewareRouter.js
-│ ├── package.json
-│ └── .env
+│   ├── app.js
+│   ├── routers/
+│   │   ├── authRouter.js
+│   │   └── middlewareRouter.js
+│   ├── package.json
+│   └── .env
 └── .gitignore
 
 
