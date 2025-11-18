@@ -18,26 +18,23 @@ MVP: make a login system with predefined password and username
 
 # Project structure:
 man_2/
-│
 ├── backend/
-│   ├── app.js
-│   ├── routers/
-│   │   ├── authRouter.js
-│   │   └── middlewareRouter.js
-│   ├── package.json
-│   └── .env
-│
+│ ├── app.js
+│ ├── routers/
+│ │ ├── authRouter.js
+│ │ └── middlewareRouter.js
+│ ├── package.json
+│ └── .env
 ├── frontend/
-│   ├── src/
-│   │   ├── routes/
-│   │   │   ├── login.svelte
-│   │   │   ├── signup.svelte
-│   │   │   └── dashboard.svelte
-│   │   └── stores/
-│   │       └── user.js
-│   ├── package.json
-│   └── vite.config.js
-│
+│ ├── src/
+│ │ ├── routes/
+│ │ │ ├── login.svelte
+│ │ │ ├── signup.svelte
+│ │ │ └── dashboard.svelte
+│ │ └── stores/
+│ │ └── user.js
+│ ├── package.json
+│ └── vite.config.js
 └── .gitignore
 
 The idea is to seperate the dependcies according to where they are needed. Frontend is still work in progress November 18 2025.
@@ -80,5 +77,4 @@ Password hashing with bcrypt
 Rate limiting to protect login endpoints
 
 Helmet for security headers
-
 
