@@ -3,6 +3,9 @@ import express from "express";
 const app = express();
 
 
+import cors from 'cors';
+
+
 
 // Config
 import sessionConfig from "./config/sessionConfig.js";
@@ -16,6 +19,12 @@ import notFoundHandler from "./middleware/notFoundHandler.js";
 import requireLogin from "./middleware/requireLogin.js";
 
 app.use(express.json());
+
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true
+}));
+
 
 // Middleware app use
 app.use(sessionConfig);

@@ -1,8 +1,10 @@
 <script>
+  import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
 
-  // redirect immediately to login
-  goto('/login');
+  onMount(() => {
+    goto('/login');
+  });
 </script>
 
 <p>Redirecting to login...</p>
