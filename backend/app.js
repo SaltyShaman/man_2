@@ -11,8 +11,12 @@ import { generalLimiter, authLimiter } from "./config/rateLimiters.js";
 
 
 // Middleware imports
-import { notFoundPage, notFoundJson } from "./middleware/errorHandler.js";
 import helmet from "helmet";
+import notFoundHandler from "./middleware/notFoundHandler.js";
+
+//Not found handler does not redirect
+app.use(notFoundHandler);
+
 
 // Middleware app use
 app.use(sessionConfig);
@@ -28,18 +32,7 @@ import middlewareRouter from "./routers/middlewareRouter.js";
 app.use(authRouter);
 app.use(middlewareRouter);
 
-// 404 handlers
-app.use((req, res) => {
-    if (req.method === "GET") {
-        return res
-            .status(404)
-            .send("<h1>Did not find a matching route</h1>");
-    }
 
-    return res
-        .status(404)
-        .json({ data: "Did not find matching route" });
-});
 
 // Server
 const PORT = process.env.PORT || 8080;
