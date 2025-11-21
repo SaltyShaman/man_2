@@ -6,10 +6,10 @@ export async function login(req, res) {
     const { username, password } = req.body;
 
     const user = await db.get("SELECT * FROM users WHERE username = ?", username);
-    if (!user) return res.status(400).json({ error: "Invalid username or password" });
+    if (!user) return res.status(401).json({ error: "Invalid username or password" });
 
     const valid = await bcrypt.compare(password, user.password_hash);
-    if (!valid) return res.status(400).json({ error: "Invalid username or password" });
+    if (!valid) return res.status(401).json({ error: "Invalid username or password" });
 
     // Save session
     req.session.user = { id: user.id, username: user.username, role: user.role };

@@ -1,31 +1,31 @@
 import db from './connection.js';
-
-
-// backend/database/createDatabase.js
-
-
+import bcrypt from 'bcrypt';
 
 const deleteMode = process.argv.includes('delete');
 
 if (deleteMode) {
-    db.exec(`DROP TABLE IF EXISTS users;`);
+    await db.exec(`DROP TABLE IF EXISTS users;`);
 }
 
 // DDL
-db.exec(`
+await db.exec(`
 CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     username VARCHAR(50) UNIQUE NOT NULL,
     password_hash TEXT NOT NULL,
-    role TEXT CHECK( role IN ('ADMIN', 'STAFF', 'USER') ) DEFAULT 'USER',
+    role TEXT CHECK(role IN ('ADMIN', 'STAFF', 'USER')) DEFAULT 'USER',
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 `);
 
-
-//seeding
+// Seeding
 if (deleteMode) {
-    db.run(`INSERT INTO users (username, role) VALUES ('Kristoffer', 'STAFF');`);
+    const hashed = await bcrypt.hash('123', 10);
+    await db.run(
+        `INSERT INTO users (username, password_hash, role) VALUES (?, ?, ?)`,
+        ['Kristoffer', hashed, 'STAFF']
+    );
+    console.log("Seeded user: Kristoffer / password: 123");
 }
 
 console.log("Database initialized.");

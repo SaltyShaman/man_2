@@ -15,14 +15,21 @@ import helmet from "helmet";
 import notFoundHandler from "./middleware/notFoundHandler.js";
 import requireLogin from "./middleware/requireLogin.js";
 
-//Not found handler does not redirect
-app.use(notFoundHandler);
+app.use(express.json());
 
 // Middleware app use
 app.use(sessionConfig);
 app.use(helmet());
 app.use(generalLimiter);
-app.use("/auth", authLimiter);
+app.use("/auth", authRouter);
+
+
+app.get("/protected", requireLogin, (req, res) => {
+    res.json({
+        message: "Welcome to the protected route",
+        user: req.session.user
+    });
+});
 
 
 // Routers
@@ -33,6 +40,9 @@ app.use(authRouter);
 app.use(middlewareRouter);
 
 
+
+//Not found handler does not redirect --> this has to be one the last lines in app.js
+app.use(notFoundHandler);
 
 // Server
 const PORT = process.env.PORT || 8080;
