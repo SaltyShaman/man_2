@@ -13,10 +13,10 @@ import { generalLimiter, authLimiter } from "./config/rateLimiters.js";
 // Middleware imports
 import helmet from "helmet";
 import notFoundHandler from "./middleware/notFoundHandler.js";
+import requireLogin from "./middleware/requireLogin.js";
 
 //Not found handler does not redirect
 app.use(notFoundHandler);
-
 
 // Middleware app use
 app.use(sessionConfig);

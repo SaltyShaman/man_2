@@ -4,7 +4,8 @@
   "description": "Mandatory assignment 2: create a login system in node js",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deleteDatabase": "node ./database/createDatabase.js delete",
+    "updateDatabase": "node ./database/createDatabase.js"
   },
   "keywords": [
     "backend",
@@ -17,11 +18,14 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.3",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "express-rate-limit": "^8.2.1",
     "express-session": "^1.18.2",
-    "helmet": "^8.1.0"
+    "helmet": "^8.1.0",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
   }
 }
