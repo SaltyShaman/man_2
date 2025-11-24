@@ -26,8 +26,6 @@ if (deleteMode) {
         `INSERT INTO users (username, email, password_hash, role) VALUES (?, ?, ?, ?)`,
         ['Kristoffer', 'krgi0001@example.com', hashed, 'ADMIN']
     );
-    console.log("Seeded user: Kristoffer / password: 123 / email: krgi0001@example.com");
 }
 
-console.log("Database initialized.");
 process.exit();
