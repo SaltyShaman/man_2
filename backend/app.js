@@ -45,7 +45,6 @@ app.get("/protected", requireLogin, (req, res) => {
 import authRouter from "./routers/authRouter.js";
 import middlewareRouter from "./routers/middlewareRouter.js";
 
-app.use(authRouter);
 app.use(middlewareRouter);
 
 
