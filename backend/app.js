@@ -2,21 +2,18 @@ import "dotenv/config";
 import express from "express";
 const app = express();
 
-
 import cors from 'cors';
-
-
 
 // Config
 import sessionConfig from "./config/sessionConfig.js";
 import { generalLimiter, authLimiter } from "./config/rateLimiters.js";
 
-
-
 // Middleware imports
 import helmet from "helmet";
 import notFoundHandler from "./middleware/notFoundHandler.js";
-import requireLogin from "./middleware/requireLogin.js";
+import protectedRouter from "./routers/protectedRouter.js";
+
+
 
 app.use(express.json());
 
@@ -31,14 +28,7 @@ app.use(sessionConfig);
 app.use(helmet());
 app.use(generalLimiter);
 app.use("/auth", authRouter);
-
-
-app.get("/protected", requireLogin, (req, res) => {
-    res.json({
-        message: "Welcome to the protected route",
-        user: req.session.user
-    });
-});
+app.use(protectedRouter);
 
 
 // Routers
