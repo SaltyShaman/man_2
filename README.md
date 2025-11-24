@@ -75,7 +75,7 @@ man_2/ (root folder)
 - **Svelte stores** – State management  
 
 ## Database
--*SQLite**
+-*SQLite*
 
 ## Security Features
 - Session validation for logged-in users  
