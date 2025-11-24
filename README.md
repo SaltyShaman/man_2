@@ -6,9 +6,7 @@ It focuses on:
 - Secure user authentication with sessions  
 - Password hashing  
 - Rate limiting and security middleware  
-- Separation of concerns between backend and frontend  
-
-The goal is to provide a modern, secure, and maintainable structure for learning and demonstration purposes.
+- Seperation what should be in the frontend and the backend folders. Web sockets are not yet taught in classes as of November 24 2025.
 
 **MVP:** Make a login system with a predefined username and password.
 
