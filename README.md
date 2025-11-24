@@ -87,3 +87,4 @@ man_2/ (root folder)
 - Better validation in browser. Stricter control with diffrent browser tabs
 - Logout needs to require login or throw a redirect and an error message
 - Proper role implementation. Examle: admin routes, staff routes and enduser routers
+- A way to call the localized URL followed by endpoint. Example: deployment.com/auth is simply refered to as baseurl/auth in the frontend API call
