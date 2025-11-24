@@ -24,10 +24,39 @@ man_2/ (root folder)
 │ ├─ package-lock.json
 │ ├─ .env
 │ ├─ app.js
+│ ├─ users.db (in gitignore)
 │ └─ routers/
 │ ├─ authRouter.js
 │ └─ middlewareRouter.js
-├─ frontend/ # To be implemented
+│ └─ config/
+│ ├─ rateLimiters.js
+│ ├─ sessionConfig.js
+│ └─ controllers/
+│ ├─ authController.js
+│ └─ database/
+│ ├─ connection.js
+│ ├─ createDatabase.js
+│ └─ middleware/
+│ ├─ notFoundHandler.js
+│ ├─ requireLogin.js
+
+├─ frontend/ 
+│ ├─ svelte.config.js
+│ ├─ vite.config.js
+│ ├─ .npmrc
+│ └─ src/
+│ └─ lib/
+│ ├─ layout.server.js
+│ └─ protected/
+│ ├─ +page.svelte
+│ └─ login/
+│ ├─ +page.svelte
+
+
+
+
+
+
 │ └─ (folder structure will be added later)
 └─ .gitignore
 
