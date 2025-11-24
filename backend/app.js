@@ -17,6 +17,8 @@ import protectedRouter from "./routers/protectedRouter.js";
 
 app.use(express.json());
 
+
+//CORS has to be before the routers
 app.use(cors({
     origin: 'http://localhost:5173',
     credentials: true
@@ -33,9 +35,7 @@ app.use(protectedRouter);
 
 // Routers
 import authRouter from "./routers/authRouter.js";
-import middlewareRouter from "./routers/middlewareRouter.js";
 
-app.use(middlewareRouter);
 
 
 
