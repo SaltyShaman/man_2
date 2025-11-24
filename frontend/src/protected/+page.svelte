@@ -24,13 +24,7 @@
     }
   }
 
-  async function logout() {
-    await fetch('http://localhost:8080/auth/logout', {
-      method: 'POST',
-      credentials: 'include'
-    });
-    goto('/login');
-  }
+
 
   onMount(() => fetchProtected());
 </script>
@@ -39,7 +33,6 @@
 
 {#if Object.keys(user).length > 0}
   <p>Welcome, {user.username}! Role: {user.role}</p>
-  <button on:click={logout}>Logout</button>
 {:else}
   <p>{message}</p>
 {/if}
