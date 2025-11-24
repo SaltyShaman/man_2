@@ -51,13 +51,6 @@ man_2/ (root folder)
 │ ├─ +page.svelte
 │ └─ login/
 │ ├─ +page.svelte
-
-
-
-
-
-
-│ └─ (folder structure will be added later)
 └─ .gitignore
 
 
@@ -82,7 +75,7 @@ man_2/ (root folder)
 - **Svelte stores** – State management  
 
 ## Database
-- TBD (to be integrated in future steps) – could be **MySQL**, **PostgreSQL**, or **SQLite**
+-*SQLite**
 
 ## Security Features
 - Session validation for logged-in users  
@@ -90,4 +83,7 @@ man_2/ (root folder)
 - Rate limiting to protect login endpoints  
 - Helmet for security headers
 
-
+## Wishlist for future devolpment
+- Better validation in browser. Stricter control with diffrent browser tabs
+- Logout needs to require login or throw a redirect and an error message
+- Proper role implementation. Examle: admin routes, staff routes and enduser routers
