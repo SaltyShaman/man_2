@@ -1,13 +1,17 @@
 <script>
 	import { goto } from '$app/navigation';
 
-	export let showLogout = false;
+	export let showLogout = true; // always true now
 
 	async function logout() {
-		await fetch('http://localhost:8080/auth/logout', {
-			method: 'POST',
-			credentials: 'include'
-		});
+		try {
+			await fetch('http://localhost:8080/auth/logout', {
+				method: 'POST',
+				credentials: 'include'
+			});
+		} catch (err) {
+			console.error('Logout failed', err);
+		}
 		goto('/login');
 	}
 </script>

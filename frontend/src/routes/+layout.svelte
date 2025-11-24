@@ -10,9 +10,8 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<!-- Show header on all pages -->
-<Header showLogout={data.user !== null} />
-
+<!-- Header always shows, logout button always visible -->
+<Header showLogout={true} />
 
 <main class="page-container">
 	<slot />
@@ -26,3 +25,4 @@
 		padding: 2rem;
 	}
 </style>
+

@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "deleteDatabase": "node ./database/createDatabase.js delete",
-    "updateDatabase": "node ./database/createDatabase.js"
+    "updateDatabase": "node ./database/createDatabase.js",
+    "resetDatabase": "npm run deleteDatabase && npm run updateDatabase"
   },
   "keywords": [
     "backend",

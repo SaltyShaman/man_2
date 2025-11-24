@@ -3,20 +3,25 @@ import bcrypt from "bcrypt";
 
 // LOGIN
 export async function login(req, res) {
-    const { username, password } = req.body;
+    const { usernameOrEmail, password } = req.body;
 
-    const user = await db.get("SELECT * FROM users WHERE username = ?", username);
-    if (!user) return res.status(401).json({ error: "Invalid username or password" });
+    // Find user by username OR email
+    const user = await db.get(
+        "SELECT * FROM users WHERE username = ? OR email = ?",
+        [usernameOrEmail, usernameOrEmail]
+    );
+
+    if (!user) return res.status(401).json({ error: "Invalid username/email or password" });
 
     const valid = await bcrypt.compare(password, user.password_hash);
-    if (!valid) return res.status(401).json({ error: "Invalid username or password" });
+    if (!valid) return res.status(401).json({ error: "Invalid username/email or password" });
 
     // Save session
     req.session.user = { id: user.id, username: user.username, role: user.role };
 
     res.json({ message: "Logged in", user: req.session.user });
 }
-        
+
 // LOGOUT
 export function logout(req, res) {
     req.session.destroy(() => {
