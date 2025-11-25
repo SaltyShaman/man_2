@@ -43,6 +43,11 @@ man_2/ (root folder)
 │ └─ src/
 │ └─ lib/
 │ ├─ layout.server.js
+│ └─ components/
+│ ├─ Footer.svelte
+│ ├─ Header.svelte
+│ └─ routes/
+│ ├─ +layout.svelte
 │ └─ protected/
 │ ├─ +page.svelte
 │ └─ login/
@@ -52,6 +57,10 @@ man_2/ (root folder)
 
 
 ```
+
+Layout is used for resuable header and footer. 
+
+The folders inside frontend/src except for the lib folder contains a svelte page.
 
 
 # 🛠️ Technology Stack
