@@ -18,8 +18,6 @@ It focuses on:
 
 man_2/ (root folder)
 ├─ backend/
-│ ├─ package.json
-│ ├─ package-lock.json
 │ ├─ .env
 │ ├─ app.js
 │ ├─ users.db (in gitignore)
